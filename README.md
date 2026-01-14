@@ -28,9 +28,15 @@ You can create a `conda` or `venv` environment and install:
 pip install torch pandas numpy tqdm
 ```
 
+### Hardware / training setup
+
+The model was trained on a cloud GPU server with 8× NVIDIA H200 GPUs using PyTorch
+distributed training (DistributedDataParallel). The code can also be run on a single GPU,
+with proportionally longer training time.
+
 ### How to train the model
 
-1. Make sure the data directory `quanthw_202509/` is in the project root (same level as `model/`).
+1. Make sure the data directory `data/` is in the project root (same level as `model/`).
 2. From the project root, run:
 
 ```bash
@@ -47,7 +53,7 @@ The script will:
 
 This repository does **not** include any raw data for legal and size reasons.
 
-The model expects a directory named `quanthw_202509/` in the project root, containing yearly
+The model expects a directory named `data/` in the project root, containing yearly
 time‑series tensors and index files with the following structure (one triplet per year):
 
 - `<YEAR>_xs.pt`  — input features, shape `[N, seq_len, feature_dim]`
@@ -60,7 +66,7 @@ Examples: `2006_xs.pt`, `2006_ys.pt`, `2006_indices.csv`, …, `2023_xs.pt`, `20
 
 The data itself is assumed to come from a proprietary or competition dataset and is **not publicly
 redistributable**. To run this project, users should prepare their own dataset in the same format
-and place it under `quanthw_202509/`.
+and place it under `data/`.
 
 ### Generate `score_df` using a pre-trained model
 
