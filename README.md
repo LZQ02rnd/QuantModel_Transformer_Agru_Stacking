@@ -60,23 +60,4 @@ The script will:
 - Run inference on the validation set (2022–2023)
 - Save `score_df_2022-2023.parquet` in the current environment
 
-### GitHub usage
 
-- The `.gitignore` file is configured to ignore:
-  - Large datasets such as `quanthw_202509/`
-  - Model weights `*.pt` / `*.pth`
-  - Output files like `*.parquet`
-  - Documents `*.docx`
-
-You can initialize and push this repository with:
-
-```bash
-git init
-git add .
-git commit -m "Add Transformer + AGRU Stacking quant model"
-git branch -M main
-git remote add origin <your GitHub repo URL>
-git push -u origin main
-```
-
-This way, GitHub only shows the core code and example backtest results, while large data and model weights stay local.
