@@ -456,7 +456,7 @@ class MyModel(nn.Module):
 # ==================== Dataset类 ====================
 class StockDataset(Dataset):
     """股票数据集"""
-    def __init__(self, years, data_dir='quanthw_202509', mode='train'):
+    def __init__(self, years, data_dir='data', mode='train'):
         self.data_dir = data_dir
         self.mode = mode
         
@@ -684,9 +684,9 @@ def main():
         print(f"Single GPU training on: {device}")
     
     # ========== 配置参数 ==========
-    data_dir = '/root/autodl-tmp/quanthw_202509'
+    data_dir = '/root/autodl-tmp/data'
     if not os.path.exists(data_dir):
-        data_dir = 'quanthw_202509'
+        data_dir = 'data'
     
     train_years = list(range(2006, 2022))
     val_years = [2022, 2023]

@@ -12,7 +12,7 @@ __pycache__/
 .DS_Store
 
 # 大数据文件与模型权重（不上传到 GitHub）
-quanthw_202509/
+data/
 *.pt
 *.pth
 *.parquet

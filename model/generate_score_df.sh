@@ -99,9 +99,9 @@ print("✓ 模型加载成功")
 
 # 准备数据
 print("\n准备验证集数据...")
-data_dir = '/root/autodl-tmp/quanthw_202509'
+data_dir = '/root/autodl-tmp/data'
 if not os.path.exists(data_dir):
-    data_dir = 'quanthw_202509'
+    data_dir = 'data'
 
 val_dataset = StockDataset([2022, 2023], data_dir, mode='val')
 val_loader = DataLoader(val_dataset, batch_size=512, shuffle=False, num_workers=4)
