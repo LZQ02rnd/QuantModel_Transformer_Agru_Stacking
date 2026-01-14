@@ -43,6 +43,25 @@ The script will:
 - Validate on 2022–2023 and save the best model by **IC**
 - After training, generate `score_df_2022-2023.parquet` for backtesting
 
+### Data
+
+This repository does **not** include any raw data for legal and size reasons.
+
+The model expects a directory named `quanthw_202509/` in the project root, containing yearly
+time‑series tensors and index files with the following structure (one triplet per year):
+
+- `<YEAR>_xs.pt`  — input features, shape `[N, seq_len, feature_dim]`
+- `<YEAR>_ys.pt`  — target returns, shape `[N, 1]`
+- `<YEAR>_indices.csv` — metadata with at least:
+  - `date`: trading date
+  - `code`: instrument identifier
+
+Examples: `2006_xs.pt`, `2006_ys.pt`, `2006_indices.csv`, …, `2023_xs.pt`, `2023_ys.pt`, `2023_indices.csv`.
+
+The data itself is assumed to come from a proprietary or competition dataset and is **not publicly
+redistributable**. To run this project, users should prepare their own dataset in the same format
+and place it under `quanthw_202509/`.
+
 ### Generate `score_df` using a pre-trained model
 
 If you already have a trained model checkpoint (e.g. `transformer_agru_model.pth`), in a Linux environment:
