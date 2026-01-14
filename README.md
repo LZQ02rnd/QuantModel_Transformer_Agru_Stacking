@@ -10,7 +10,6 @@ The core architecture is a **Transformer + AGRU Stacking ensemble**, optimized m
 - **`backtest_metrics.csv`**: Example backtest performance metrics.
 - **`nav_curve.csv`**: Example NAV (net asset value) curve.
 - **`score_df_2022-2023.parquet`**: Example scores for backtesting (kept locally; ignored by Git via `.gitignore`).
-- **`quanthw_202509/`**: Full dataset directory (ignored by Git; not pushed to GitHub).
 
 ### Environment
 
